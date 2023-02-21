@@ -19,6 +19,7 @@ require 'tzf'
 
 TZF.tz_name(40.74771675713742, -73.99350390136448)
 # => "America/New_York"
+```
 
 ## Development
 
