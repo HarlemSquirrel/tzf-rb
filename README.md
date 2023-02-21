@@ -1,6 +1,6 @@
 # tzf-rb
 
-[![RubyGems][gem_version_badge]][ruby_gems]
+[![Gem Version](https://badge.fury.io/rb/tzf.svg)](https://badge.fury.io/rb/tzf)
 
 Time zone lookup using [tzf-rs](https://github.com/ringsaturn/tzf-rs).
 
