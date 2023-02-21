@@ -9,11 +9,13 @@ require "rubocop/rake_task"
 
 RuboCop::RakeTask.new
 
+desc "Build rust dependencies"
 task :rust_build do
   `cargo rustc --release`
   `cp ./target/release/libtzf.so ./lib/tzf/`
 end
 
+desc "Clean rust dependencies"
 task :rust_clean do
   `cargo clean`
   `rm -f ./lib/tzf/libtzf.so`

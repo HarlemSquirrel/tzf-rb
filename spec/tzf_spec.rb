@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe TZF do # rubocop:disable Metrics/BlockLength
+RSpec.describe TZF do
   it "has a version number" do
-    expect(TZF::VERSION).not_to be nil
+    expect(TZF::VERSION).not_to be_nil
   end
 
-  describe ".tz_name" do # rubocop:disable Metrics/BlockLength
+  describe ".tz_name" do
     subject(:tz_name) { described_class.tz_name(*coordinates) }
 
     context "with NYC coordinates" do
