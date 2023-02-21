@@ -14,3 +14,6 @@
 # Added by cargo
 
 /target
+
+# Build gems
+*.gem

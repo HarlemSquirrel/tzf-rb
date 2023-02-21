@@ -1,5 +1,7 @@
 # tzf-rb
 
+[![RubyGems][gem_version_badge]][ruby_gems]
+
 Time zone lookup using [tzf-rs](https://github.com/ringsaturn/tzf-rs).
 
 ## Installation
