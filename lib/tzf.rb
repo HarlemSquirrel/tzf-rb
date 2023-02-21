@@ -10,6 +10,6 @@ module TZF
   class Error < StandardError; end
 
   def self.tz_name(lat, lng)
-    RS.get_tz_name(lat, lng)
+    FFIExt.get_tz_name(lat, lng)
   end
 end

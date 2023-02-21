@@ -6,7 +6,7 @@ module TZF
   ##
   # Interface to tsf-rs Rust library.
   #
-  module RS
+  module FFIExt
     extend FFI::Library
 
     ffi_lib File.expand_path("libtzf.so", __dir__)
