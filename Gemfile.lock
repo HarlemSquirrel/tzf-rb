@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tzf (0.2.0)
+    tzf (0.2.2)
 
 GEM
   remote: https://rubygems.org/
