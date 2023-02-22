@@ -2,7 +2,9 @@
 
 [![Gem Version](https://badge.fury.io/rb/tzf.svg)](https://badge.fury.io/rb/tzf)
 
-Time zone lookup using [tzf-rs](https://github.com/ringsaturn/tzf-rs).
+Ruby time zone lookup for coordinates using the [tzf-rs](https://github.com/ringsaturn/tzf-rs) Rust library.
+
+Data is sourced from [Timezone Boundary Builder](https://github.com/evansiroky/timezone-boundary-builder).
 
 ## Installation
 
