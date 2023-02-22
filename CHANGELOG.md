@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.2.4] - 2023-02-22
+
+- Fix dependencies
+
 ## [0.2.3] - 2023-02-22
 
 - Remove unused src directory
