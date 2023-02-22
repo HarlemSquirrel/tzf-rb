@@ -2,6 +2,8 @@
 
 set -e
 
+bundle exec rake
+
 version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
 
 echo "Building gem version $version"
