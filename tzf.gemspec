@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/HarlemSquirrel/tzf-rb"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
+  spec.required_rubygems_version = ">= 3.3.11"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/HarlemSquirrel/tzf-rb"
@@ -28,11 +29,7 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+  spec.extensions = ["ext/tzf/extconf.rb"]
 
-  # Uncomment to register a new dependency of your gem
-  spec.add_dependency "ffi", "~> 1.0"
-
-  # For more information and examples about making a new gem, check out our
-  # guide at: https://bundler.io/guides/creating_gem.html
   spec.metadata["rubygems_mfa_required"] = "true"
 end

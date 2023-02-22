@@ -2,14 +2,12 @@ PATH
   remote: .
   specs:
     tzf (0.2.0)
-      ffi (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
     diff-lcs (1.5.0)
-    ffi (1.15.5)
     json (2.6.3)
     parallel (1.22.1)
     parser (3.2.0.0)
