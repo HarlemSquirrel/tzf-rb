@@ -4,5 +4,3 @@ IFS=$'\n\t'
 set -vx
 
 bundle install
-
-bundle exec rake rust_build

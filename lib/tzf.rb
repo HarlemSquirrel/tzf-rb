@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 require_relative "tzf/version"
-require_relative "tzf/ffi_ext"
+require_relative "tzf/tzf"
 
 ##
-# Top level.
+# Top level module.
+#
+# Methods defined in ext/tzf/src/lib.rs
+#
+# Ex TZF.tz_name(latitude, longitude) => String
 #
 module TZF
   class Error < StandardError; end
-
-  def self.tz_name(lat, lng)
-    FFIExt.get_tz_name(lat, lng)
-  end
 end

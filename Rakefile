@@ -9,16 +9,13 @@ require "rubocop/rake_task"
 
 RuboCop::RakeTask.new
 
-desc "Build rust dependencies"
-task :rust_build do
-  `cargo rustc --release`
-  `cp ./target/release/libtzf.so ./lib/tzf/`
+require "rake/extensiontask"
+
+desc "Build extension"
+task build: :compile
+
+Rake::ExtensionTask.new("tzf") do |ext|
+  ext.lib_dir = "lib/tzf"
 end
 
-desc "Clean rust dependencies"
-task :rust_clean do
-  `cargo clean`
-  `rm -f ./lib/tzf/libtzf.so`
-end
-
-task default: %i[rust_build spec rubocop]
+task default: %i[compile spec rubocop]

@@ -1,0 +1,15 @@
+[package]
+name = "tzf"
+version = "0.1.0"
+edition = "2021"
+authors = ["Kevin McCormack <kevin@mccormack.tech>"]
+license = "MIT"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+lazy_static = "1.4.0"
+magnus = { version = "0.4" }
+tzf-rs = "0.3.0"

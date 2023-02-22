@@ -1,13 +1,7 @@
-[package]
-name = "tzf"
-version = "0.1.0"
-edition = "2021"
+# This Cargo.toml is here to let externals tools (IDEs, etc.) know that this is
+# a Rust project. Your extensions dependencies should be added to the Cargo.toml
+# in the ext/ directory.
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[lib]
-crate-type = ["cdylib"]
-
-[dependencies]
-lazy_static = "1.4.0"
-tzf-rs = "0.3.0"
+[workspace]
+members = ["./ext/tzf"]
+resolver = "2"
