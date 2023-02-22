@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.2.0] - 2023-02-22
+
 - Migrate to [magnus](https://github.com/matsadler/magnus)
 
 ## [0.1.0] - 2023-02-21
