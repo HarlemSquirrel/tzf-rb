@@ -14,10 +14,34 @@ RSpec.describe TZF do
       it { is_expected.to eq "America/New_York" }
     end
 
+    context "with St Francis, Kansas coordinates" do
+      let(:coordinates) { [39.82035288651037, -101.8256829047708] }
+
+      it { is_expected.to eq "America/Chicago" }
+    end
+
+    context "with Weskan, Kansas coordinates" do
+      let(:coordinates) { [38.82518946320606, -101.98519499134277] }
+
+      it { is_expected.to eq "America/Denver" }
+    end
+
+    context "with Denver coordinates" do
+      let(:coordinates) { [39.750506124958264, -104.91830433871691] }
+
+      it { is_expected.to eq "America/Denver" }
+    end
+
     context "with Vancouver, CA coordinates" do
       let(:coordinates) { [49.47341252718892, -123.05334825540935] }
 
       it { is_expected.to eq "America/Vancouver" }
+    end
+
+    context "with Sachs Harbour, CA coordinates" do
+      let(:coordinates) { [72.07920766309644, -125.33769346109779] }
+
+      it { is_expected.to eq "America/Inuvik" }
     end
 
     context "with Honolulu coordinates" do
@@ -78,6 +102,24 @@ RSpec.describe TZF do
       let(:coordinates) { [-8.347585689571595, -56.84294863543579] }
 
       it { is_expected.to eq "America/Santarem" }
+    end
+
+    context "with Easter Island coordinates" do
+      let(:coordinates) { [-27.11069740589065, -109.3669685185801] }
+
+      it { is_expected.to eq "Pacific/Easter" }
+    end
+
+    context "with Arctic Ocean coordinates" do
+      let(:coordinates) { [86.807722969671, -178.41909254375486] }
+
+      it { is_expected.to eq "Etc/GMT+12" }
+    end
+
+    context "with rural Antarctica coordinates" do
+      let(:coordinates) { [-85.91222463600428, 64.53482925964336] }
+
+      it { is_expected.to eq "Antarctica/Mawson" }
     end
   end
 end
