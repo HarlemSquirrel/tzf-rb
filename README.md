@@ -1,6 +1,7 @@
 # tzf-rb
 
 [![tzf](https://badge.fury.io/rb/tzf.svg)](https://badge.fury.io/rb/tzf)
+![build](https://github.com/HarlemSquirrel/tzf-rb/actions/workflows/main.yml/badge.svg)
 
 Ruby time zone lookup for coordinates using the [tzf-rs](https://github.com/ringsaturn/tzf-rs) Rust library.
 
