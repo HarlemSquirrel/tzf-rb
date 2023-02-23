@@ -3,4 +3,5 @@
 require "mkmf"
 require "rb_sys/mkmf"
 
+# https://github.com/oxidize-rb/rb-sys/tree/main/gem
 create_rust_makefile("tzf/tzf")
