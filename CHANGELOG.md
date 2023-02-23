@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.2.6] - 2023-02-23
+
+- Set min rubygems to [3.4.6](https://github.com/rubygems/rubygems/blob/master/CHANGELOG.md#346--2023-01-31) to address issues with CargoBuilder install path
+
 ## [0.2.5] - 2023-02-23
 
 - Update rake compile task and fix CI builds #2
