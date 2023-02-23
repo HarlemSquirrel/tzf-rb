@@ -14,7 +14,11 @@ require "rake/extensiontask"
 desc "Build extension"
 task build: :compile
 
-Rake::ExtensionTask.new("tzf") do |ext|
+require "rb_sys/extensiontask"
+
+GEMSPEC = Gem::Specification.load("tzf.gemspec")
+
+RbSys::ExtensionTask.new("tzf", GEMSPEC) do |ext|
   ext.lib_dir = "lib/tzf"
 end
 
