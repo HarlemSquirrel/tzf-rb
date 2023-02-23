@@ -2,6 +2,14 @@
 
 set -e
 
+if [[ "$(git branch --show-current)" != "main" ]]; then
+  echo "Not on main branch!"
+  exit 1
+elif [[ "$(git status -s)" != "" ]]; then
+  echo "branch is not clean!"
+  exit 1
+fi
+
 bundle exec rake
 
 version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
