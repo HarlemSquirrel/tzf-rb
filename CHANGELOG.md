@@ -1,6 +1,8 @@
 ## [Unreleased]
 
--  Update rake compile task and fix CI builds #2 
+## [0.2.5] - 2023-02-23
+
+- Update rake compile task and fix CI builds #2
 
 ## [0.2.4] - 2023-02-22
 
