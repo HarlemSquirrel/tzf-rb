@@ -1,6 +1,7 @@
 ## [Unreleased]
 
-- Bump tzf-rs to [0.4.0](https://github.com/ringsaturn/tzf-rs/releases/tag/v0.4.0)
+- Bump tzf-rs to [0.4.0](https://github.com/ringsaturn/tzf-rs/releases/tag/v0.4.0) which includes [2023b](https://github.com/evansiroky/timezone-boundary-builder/releases/tag/2023b) data.
+- Bump remove_dir_all to address to address CWE-366 and CWE-367
 
 ## [0.2.6] - 2023-02-23
 
