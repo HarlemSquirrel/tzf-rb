@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Bump tzf-rs to [0.4.0](https://github.com/ringsaturn/tzf-rs/releases/tag/v0.4.0)
+
 ## [0.2.6] - 2023-02-23
 
 - Set min rubygems to [3.4.6](https://github.com/rubygems/rubygems/blob/master/CHANGELOG.md#346--2023-01-31) to address issues with CargoBuilder install path
