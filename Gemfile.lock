@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tzf (0.4.0)
+    tzf (0.4.1)
       rb_sys (~> 0.9)
 
 GEM
