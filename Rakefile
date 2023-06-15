@@ -5,6 +5,15 @@ require "rspec/core/rake_task"
 
 RSpec::Core::RakeTask.new(:spec)
 
+require "ruby_memcheck"
+require "ruby_memcheck/rspec/rake_task"
+
+RubyMemcheck.config(binary_name: "tzf/tzf")
+
+namespace :spec do
+  RubyMemcheck::RSpec::RakeTask.new(valgrind: :compile)
+end
+
 require "rubocop/rake_task"
 
 RuboCop::RakeTask.new

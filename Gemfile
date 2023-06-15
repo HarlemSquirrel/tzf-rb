@@ -7,6 +7,8 @@ gemspec
 
 gem "rspec", "~> 3.0"
 
+gem "ruby_memcheck"
+
 gem "rubocop", "~> 1.21"
 gem "rubocop-rake", "~> 0.6"
 gem "rubocop-rspec", "~> 2.18"
