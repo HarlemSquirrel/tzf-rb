@@ -22,4 +22,4 @@ git tag --sign "v$version"
 
 git push --tags
 
-gem push /home/kmack/code/tzf-rb/tzf-$version.gem
+gem push tzf-$version.gem
