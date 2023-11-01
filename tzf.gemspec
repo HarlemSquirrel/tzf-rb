@@ -20,13 +20,14 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/HarlemSquirrel/tzf-rb"
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files = Dir.chdir(__dir__) do
-    `git ls-files -z`.split("\x0").reject do |f|
-      (File.expand_path(f) == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|circleci)|appveyor)})
-    end
-  end
+  spec.files = Dir["ext/**/*"] +
+               Dir["lib/**/*.rb"] +
+               Dir["sig/tzf.rbs"] +
+               Dir["Cargo.lock"] +
+               Dir["Cargo.toml"] +
+               Dir["LICENSE.txt"] +
+               Dir["README.md"] +
+               Dir["tzf.gemspec"]
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
