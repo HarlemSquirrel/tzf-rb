@@ -9,6 +9,10 @@ Data is sourced from [Timezone Boundary Builder](https://github.com/evansiroky/t
 
 ## Installation
 
+Install [Ruby](https://www.ruby-lang.org/en/) and [`clang`](https://clang.llvm.org/) using your operating system's package manager. Currently, `clang` is required to build and install the native Rust extensions with [`rb_sys`](https://github.com/oxidize-rb/rb-sys).
+
+During the below install with RubyGems, the system will attempt to download and install Rust and Cargo if not found. Optionall, install [Rust](https://www.rust-lang.org/) before installing this gem.
+
 Install the gem and add to the application's Gemfile by executing:
 
     $ bundle add tzf
