@@ -1,5 +1,17 @@
 ## [Unreleased]
 
+## [0.4.5] 2024-01-02
+
+- Bump tzf-rs to 0.4.5 #8
+
+## [0.4.4] - 2023-10-02
+
+- Bump tzf-rs to 0.4.4 and magnus to 0.6
+
+## [0.4.3] - 2023-08-01
+
+- Bump tzf-rs to 0.4.3 #5
+
 ## [0.4.1] - 2023-03-27
 
 - Bump tzf-rs to [0.4.1](https://github.com/ringsaturn/tzf-rs/releases/tag/v0.4.1)
