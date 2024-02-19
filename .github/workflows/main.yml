@@ -34,4 +34,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          docker build -t tzf-testing ./docker
+          docker build -f docker/Dockerfile -t tzf-testing .
