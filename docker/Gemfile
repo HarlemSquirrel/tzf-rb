@@ -2,4 +2,4 @@ source "https://rubygems.org"
 
 # gem "rb_sys", "0.9.87"
 
-gem "tzf", git: "https://github.com/HarlemSquirrel/tzf-rb", branch: "bundle-update-20240219"
+gem "tzf"

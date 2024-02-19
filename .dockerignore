@@ -1,0 +1,23 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+*.bundle
+*.so
+*.o
+*.a
+mkmf.log
+
+# rspec failure tracking
+.rspec_status
+
+# Added by cargo
+/target
+
+# Built gems
+*.gem
