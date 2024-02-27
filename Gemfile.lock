@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     tzf (0.4.5)
-      rb_sys (~> 0.9)
+      rb_sys (~> 0.9.89)
 
 GEM
   remote: https://rubygems.org/
@@ -20,7 +20,7 @@ GEM
     rake (13.1.0)
     rake-compiler (1.2.7)
       rake
-    rb_sys (0.9.88)
+    rb_sys (0.9.89)
     regexp_parser (2.9.0)
     rexml (3.2.6)
     rspec (3.13.0)
@@ -35,7 +35,7 @@ GEM
     rspec-mocks (3.13.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-support (3.13.0)
+    rspec-support (3.13.1)
     rubocop (1.60.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -75,4 +75,4 @@ DEPENDENCIES
   tzf!
 
 BUNDLED WITH
-   2.5.4
+   2.5.6
