@@ -35,5 +35,5 @@ Gem::Specification.new do |spec|
 
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  spec.add_dependency("rb_sys", "~> 0.9")
+  spec.add_dependency("rb_sys", "~> 0.9.89")
 end
