@@ -1,4 +1,4 @@
-FROM ruby:3.3
+FROM ruby:3
 WORKDIR /app
 
 # Install the requirements we need to build the native Rust extensions
