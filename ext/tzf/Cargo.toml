@@ -12,4 +12,4 @@ crate-type = ["cdylib"]
 [dependencies]
 lazy_static = "1.4.0"
 magnus = { version = "0.6" }
-tzf-rs = { version = "0.4.5", default-features = false }
+tzf-rs = { version = "0.4.7", default-features = false }
