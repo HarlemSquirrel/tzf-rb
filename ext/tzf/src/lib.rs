@@ -1,6 +1,6 @@
 use lazy_static::lazy_static;
 use magnus::{define_module, function, prelude::*, Error};
-use magnus::{RString};
+use magnus::RString;
 
 use tzf_rs::DefaultFinder;
 
@@ -15,11 +15,19 @@ fn get_tz_name(lat: f64, lng: f64) -> RString {
   return tz_name;
 }
 
+#[no_mangle]
+fn get_tz_names(lat: f64, lng: f64) -> Vec<&'static str> {
+  let tz_names: Vec<&str> = FINDER.get_tz_names(lng, lat);
+
+  return tz_names;
+}
+
 #[magnus::init]
 fn init() -> Result<(), Error> {
     let module = define_module("TZF")?;
 
     module.define_singleton_method("tz_name", function!(get_tz_name, 2))?;
+    module.define_singleton_method("tz_names", function!(get_tz_names, 2))?;
 
     Ok(())
 }

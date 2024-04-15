@@ -122,4 +122,32 @@ RSpec.describe TZF do
       it { is_expected.to eq "Antarctica/Mawson" }
     end
   end
+
+  describe ".tz_names" do
+    subject(:tz_names) { described_class.tz_names(*coordinates) }
+
+    context "with Bermuda coordinates" do
+      let(:coordinates) { [32.26669174802396, -65.04326428488295] }
+
+      it { is_expected.to eq ["Atlantic/Bermuda"] }
+    end
+
+    context "with Denver coordinates" do
+      let(:coordinates) { [39.750506124958264, -104.91830433871691] }
+
+      it { is_expected.to eq ["America/Denver"] }
+    end
+
+    context "with London coordinates" do
+      let(:coordinates) { [51.56123375122209, -0.15079162500107895] }
+
+      it { is_expected.to eq ["Europe/London"] }
+    end
+
+    context "with NYC coordinates" do
+      let(:coordinates) { [40.74771675713742, -73.99350390136448] }
+
+      it { is_expected.to eq ["America/New_York"] }
+    end
+  end
 end
