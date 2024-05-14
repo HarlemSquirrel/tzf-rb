@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+## [1.0.0]
+
+- Bump magnus to 0.6.4 #22
+- Add .tz_names #20
+- Bump tzf-rs to 0.4.8 #17
+- Bump shlex from 1.2.0 to 1.3.0 #12
+- Add Ruby 3.3 #11
+
 ## [0.4.5] 2024-01-02
 
 - Bump tzf-rs to 0.4.5 #8
