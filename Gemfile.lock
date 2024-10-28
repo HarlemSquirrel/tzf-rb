@@ -35,8 +35,7 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
-    rexml (3.3.6)
-      strscan
+    rexml (3.3.9)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -78,7 +77,6 @@ GEM
       rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     stringio (3.1.0)
-    strscan (3.1.0)
     unicode-display_width (2.5.0)
 
 PLATFORMS
