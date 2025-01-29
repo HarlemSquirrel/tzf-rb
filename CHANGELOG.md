@@ -1,5 +1,19 @@
 ## [Unreleased]
 
+- Support Ruby 3.4
+
+## [1.0.1]
+
+- Bump rexml from 3.2.6 to 3.2.8 by @dependabot in #24
+- Update deps  by @HarlemSquirrel in #25
+- Bump lazy_static from 1.4.0 to 1.5.0 by @dependabot in #26
+- Bump magnus from 0.6.4 to 0.7.1 by @dependabot in #27
+- Bump rexml from 3.3.0 to 3.3.2 by @dependabot in #28
+- Bump rexml from 3.3.2 to 3.3.3 by @dependabot in #29
+- Bump rexml from 3.3.3 to 3.3.6 by @dependabot in #30
+- Bump tzf-rs from 0.4.8 to 0.4.9 by @dependabot in #31
+- Bump version to 1.0.1 by @HarlemSquirrel in #32
+
 ## [1.0.0]
 
 - Bump magnus to 0.6.4 #22

@@ -1,4 +1,4 @@
-FROM ruby:3
+FROM ruby:3.4-rc
 WORKDIR /app
 
 # Install the requirements we need to build the native Rust extensions
@@ -14,4 +14,4 @@ RUN gem install tzf-*.gem
 # Run a sanity check
 WORKDIR /app/docker
 RUN bundle install
-CMD ruby sanity_check.rb
+CMD ["ruby", "sanity_check.rb"]
