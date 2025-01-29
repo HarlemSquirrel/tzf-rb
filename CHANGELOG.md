@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Support Ruby 3.4
+
 ## [1.0.0]
 
 - Bump magnus to 0.6.4 #22
