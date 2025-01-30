@@ -1,6 +1,10 @@
 ## [Unreleased]
 
+## [1.1.0]
+
 - Support Ruby 3.4
+- Use rb-sys stable-api-compiled-fallback feature
+- Bump rexml from 3.3.6 to 3.3.9
 
 ## [1.0.1]
 
