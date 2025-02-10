@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+- Bump tzf-rs from 0.4.9 to 0.4.10 #38
+- Bump rb-sys from 0.9.108 to 0.9.110 #39
+
 ## [1.1.0]
 
 - Support Ruby 3.4
