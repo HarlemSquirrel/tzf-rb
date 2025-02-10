@@ -21,5 +21,12 @@ jobs:
           bundler-cache: true
           ruby-version: ruby
 
+      # GitHub release
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "pkg/*.gem"
+          generateReleaseNotes: true
+          skipIfReleaseExists: true
+
       # Release
       - uses: rubygems/release-gem@v1
