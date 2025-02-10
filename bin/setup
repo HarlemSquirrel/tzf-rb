@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 IFS=$'\n\t'
 set -vx
 
+# Set some git settings
+git config --local fetch.prune "true"
+
+# Install gem development dependencies
 bundle install
