@@ -25,6 +25,9 @@ jobs:
           version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
           echo "APP_VERSION=$version" >> $GITHUB_ENV
 
+      # Release
+      - uses: rubygems/release-gem@v1
+
       # GitHub release
       - uses: ncipollo/release-action@v1
         with:
@@ -32,6 +35,3 @@ jobs:
           generateReleaseNotes: true
           skipIfReleaseExists: true
           tag: ${{ env.APP_VERSION }}
-
-      # Release
-      - uses: rubygems/release-gem@v1
