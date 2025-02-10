@@ -16,10 +16,10 @@ version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
 
 echo "Building gem version $version"
 
-gem build
+rake build
 
 git tag --sign "v$version"
 
 git push --tags
 
-gem push tzf-$version.gem
+gem push pkg/tzf-$version.gem

@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+## [1.2.0]
+
+- Update release process to allow releasing from GH action
 - Bump tzf-rs from 0.4.9 to 0.4.10 #38
 - Bump rb-sys from 0.9.108 to 0.9.110 #39
 
