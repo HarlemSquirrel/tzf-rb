@@ -20,6 +20,10 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: ruby
+      - name: Set Environment Variables
+        run: |
+          version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
+          echo "APP_VERSION=$version" >> $GITHUB_ENV
 
       # GitHub release
       - uses: ncipollo/release-action@v1
@@ -27,6 +31,7 @@ jobs:
           artifacts: "pkg/*.gem"
           generateReleaseNotes: true
           skipIfReleaseExists: true
+          tag: ${{ env.APP_VERSION }}
 
       # Release
       - uses: rubygems/release-gem@v1
