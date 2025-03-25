@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# https://github.com/svenfuchs/gem-release?tab=readme-ov-file#gem-bump
+gem bump
