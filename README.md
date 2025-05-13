@@ -58,5 +58,5 @@ Everyone interacting in the tzf project's codebases, issue trackers, chat rooms 
 
 ## Releasing
 
-1. Bump version with `bin/bump [major|minor||patch]`
+1. Bump version with `bin/bump -v [major|minor||patch]`
 2. Release with `bin/release`
