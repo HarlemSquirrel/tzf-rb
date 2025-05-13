@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
+##
+# Bump gem version
 # https://github.com/svenfuchs/gem-release?tab=readme-ov-file#gem-bump
-gem bump
+# Ex. bin/bump -v [major|minor||patch]
+#
+gem bump $@
