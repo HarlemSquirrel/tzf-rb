@@ -1,5 +1,16 @@
 ## [Unreleased]
 
+## [1.3.0]
+
+- Add release steps to readme
+- Add codeowners
+- Bump tzf-rs from 0.4.13 to 1.0.0 #48
+- Bump json from 2.10.0 to 2.10.2 #47
+- Bump rb-sys from 0.9.110 to 0.9.111 #46
+- Bump tzf-rs from 0.4.12 to 0.4.13 #45
+- Bump tzf-rs from 0.4.10 to 0.4.12c #44
+- (add-release-action-take3) Update release workflow #43
+
 ## [1.2.0]
 
 - Update release process to allow releasing from GH action
