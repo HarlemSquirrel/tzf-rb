@@ -2,8 +2,9 @@
 
 ## [1.3.0]
 
+- Bump rb-sys from 0.9.111 to 0.9.114 #51
 - Add release steps to readme
-- Add codeowners
+- Add codeowners #52
 - Bump tzf-rs from 0.4.13 to 1.0.0 #48
 - Bump json from 2.10.0 to 2.10.2 #47
 - Bump rb-sys from 0.9.110 to 0.9.111 #46
