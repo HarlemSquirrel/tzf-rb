@@ -58,5 +58,9 @@ Everyone interacting in the tzf project's codebases, issue trackers, chat rooms 
 
 ## Releasing
 
-1. Bump version with `bin/bump -v [major|minor||patch]`
-2. Release with `bin/release`
+1. Checkout new branch
+2. Update changelog
+3. Bump version with `bin/bump -v [major|minor||patch]`
+4. Open PR
+5. Merge PR
+6. Release with GitHub action
