@@ -2,6 +2,7 @@
 
 ## [1.3.0]
 
+- Bump dev dependencies
 - Bump rb-sys from 0.9.111 to 0.9.114 #51
 - Add release steps to readme
 - Add codeowners #52
