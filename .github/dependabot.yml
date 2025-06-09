@@ -11,5 +11,3 @@ updates:
       interval: "weekly"
     assignees:
       - "HarlemSquirrel"
-    reviewers:
-      - "HarlemSquirrel"
