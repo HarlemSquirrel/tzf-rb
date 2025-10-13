@@ -1,5 +1,16 @@
 ## [Unreleased]
 
+## [1.4.0]
+
+- Bump rb-sys from 0.9.114 to 0.9.115 by @dependabot[bot] in https://github.com/HarlemSquirrel/tzf-rb/pull/54
+- Bump rb-sys from 0.9.115 to 0.9.116 by @dependabot[bot] in https://github.com/HarlemSquirrel/tzf-rb/pull/55
+- Update dependabot.yml by @HarlemSquirrel in https://github.com/HarlemSquirrel/tzf-rb/pull/56
+- Bump rb-sys from 0.9.116 to 0.9.117 by @dependabot[bot] in https://github.com/HarlemSquirrel/tzf-rb/pull/57
+- Bump magnus from 0.7.1 to 0.8.0 by @dependabot[bot] in https://github.com/HarlemSquirrel/tzf-rb/pull/58
+- Bump magnus from 0.8.0 to 0.8.1 by @dependabot[bot] in https://github.com/HarlemSquirrel/tzf-rb/pull/59
+- Bump tzf-rs from 1.0.0 to 1.0.1 by @dependabot[bot] in https://github.com/HarlemSquirrel/tzf-rb/pull/60
+- Bump magnus from 0.8.1 to 0.8.2 by @dependabot[bot] in https://github.com/HarlemSquirrel/tzf-rb/pull/61
+
 ## [1.3.0]
 
 - Bump dev dependencies
