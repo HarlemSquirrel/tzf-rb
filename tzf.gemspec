@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "Ruby time zone lookup interface using tzf-rs."
   spec.homepage = "https://github.com/HarlemSquirrel/tzf-rb"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.required_ruby_version = ">= 3.2.0"
   spec.required_rubygems_version = ">= 3.4.6"
 
   spec.metadata["bug_tracker_uri"] = "https://github.com/HarlemSquirrel/tzf-rb/issues"

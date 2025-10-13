@@ -2,6 +2,7 @@
 
 ## [1.4.0]
 
+- Drop support for Ruby < 3.2
 - Bump rb-sys from 0.9.114 to 0.9.115 by @dependabot[bot] in https://github.com/HarlemSquirrel/tzf-rb/pull/54
 - Bump rb-sys from 0.9.115 to 0.9.116 by @dependabot[bot] in https://github.com/HarlemSquirrel/tzf-rb/pull/55
 - Update dependabot.yml by @HarlemSquirrel in https://github.com/HarlemSquirrel/tzf-rb/pull/56
