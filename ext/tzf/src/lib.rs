@@ -1,5 +1,5 @@
 use lazy_static::lazy_static;
-use magnus::{define_module, function, prelude::*, Error};
+use magnus::{function, prelude::*, Error, Ruby};
 
 use tzf_rs::DefaultFinder;
 
@@ -22,8 +22,8 @@ fn get_tz_names(lat: f64, lng: f64) -> Vec<&'static str> {
 }
 
 #[magnus::init]
-fn init() -> Result<(), Error> {
-    let module = define_module("TZF")?;
+fn init(ruby: &Ruby) -> Result<(), Error> {
+    let module = ruby.define_module("TZF")?;
 
     module.define_singleton_method("tz_name", function!(get_tz_name, 2))?;
     module.define_singleton_method("tz_names", function!(get_tz_names, 2))?;
