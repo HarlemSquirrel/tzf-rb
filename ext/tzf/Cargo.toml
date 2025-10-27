@@ -12,7 +12,7 @@ crate-type = ["cdylib"]
 [dependencies]
 lazy_static = "1.5.0"
 magnus = { version = "0.8" }
-tzf-rs = { version = "1.1.2", default-features = false }
+tzf-rs = { version = "1.1.3", default-features = false }
 rb-sys = { version = "0.9", default-features = false, features = [
     "stable-api-compiled-fallback",
 ] }
