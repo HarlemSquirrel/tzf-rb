@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [1.5.0]
+
+- Cargo update #66
+- Bundle update #65
+- Bump tzf-rs from 1.1.2 to 1.1.3 # 64
+- Bump tzf-rs from 1.0.1 to 1.1.2 #63
+
 ## [1.4.0]
 
 - Drop support for Ruby < 3.2
