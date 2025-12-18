@@ -6,3 +6,6 @@
 # Ex. bin/bump -v [major|minor||patch]
 #
 gem bump $@
+
+# Update version in Gemfile.lock
+bundle install
