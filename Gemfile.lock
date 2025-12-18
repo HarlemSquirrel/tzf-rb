@@ -90,6 +90,7 @@ GEM
     unicode-emoji (4.1.0)
 
 PLATFORMS
+  arm64-darwin-25
   x86_64-linux
 
 DEPENDENCIES
@@ -104,4 +105,4 @@ DEPENDENCIES
   tzf!
 
 BUNDLED WITH
-  4.0.0
+  4.0.2
