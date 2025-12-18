@@ -25,7 +25,7 @@ jobs:
       - uses: oxidize-rb/actions/cross-gem@v1
         with:
           platform: ${{ matrix.platform }}
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v6
         with:
           name: gem-${{ matrix.platform }}
           path: pkg/*-${{ matrix.platform }}.gem
@@ -50,7 +50,7 @@ jobs:
         run: |
           version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
           echo "APP_VERSION=$version" >> $GITHUB_ENV
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v7
         with:
           path: artifacts
       - name: Move gems to pkg directory
