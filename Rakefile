@@ -20,12 +20,12 @@ GEMSPEC = Gem::Specification.load("tzf.gemspec")
 
 RbSys::ExtensionTask.new("tzf", GEMSPEC) do |ext|
   ext.lib_dir = "lib/tzf"
-  ext.cross_platform = [
-    "x86_64-linux",
-    "aarch64-linux",
-    "x86_64-darwin",
-    "arm64-darwin",
-    "x64-mingw-ucrt",
+  ext.cross_platform = %w[
+    x86_64-linux
+    aarch64-linux
+    x86_64-darwin
+    arm64-darwin
+    x64-mingw-ucrt
   ]
 end
 
