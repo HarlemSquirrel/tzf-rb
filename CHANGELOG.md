@@ -1,4 +1,8 @@
+# Changelog
+
 ## [Unreleased]
+
+- Add pre-compiled gems for linux, mac, and windows #72
 
 ## [1.5.0]
 
