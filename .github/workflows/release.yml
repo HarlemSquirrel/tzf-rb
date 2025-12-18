@@ -4,8 +4,34 @@ on:
   workflow_dispatch:
 
 jobs:
+  cross-compile:
+    name: Cross-compile gem for ${{ matrix.platform }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - "x86_64-linux"
+          - "aarch64-linux"
+          - "x86_64-darwin"
+          - "arm64-darwin"
+          - "x64-mingw-ucrt"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+      - uses: oxidize-rb/actions/cross-gem@v1
+        with:
+          platform: ${{ matrix.platform }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: gem-${{ matrix.platform }}
+          path: pkg/*-${{ matrix.platform }}.gem
   push:
     name: Push gem to RubyGems.org
+    needs: cross-compile
     runs-on: ubuntu-latest
 
     permissions:
@@ -24,6 +50,13 @@ jobs:
         run: |
           version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
           echo "APP_VERSION=$version" >> $GITHUB_ENV
+      - uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+      - name: Move gems to pkg directory
+        run: |
+          mkdir -p pkg
+          find artifacts -name "*.gem" -exec mv {} pkg/ \;
 
       # Release
       - uses: rubygems/release-gem@v1
