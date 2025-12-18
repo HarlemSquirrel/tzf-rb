@@ -2,7 +2,10 @@
 
 ## [Unreleased]
 
+## [1.6.0]
+
 - Add pre-compiled gems for linux, mac, and windows #72
+- Bundler 4.0 and bundle update #69
 
 ## [1.5.0]
 
