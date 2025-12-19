@@ -60,10 +60,6 @@ jobs:
           cache-version: v1-${{ matrix.platform }}
       - name: Build for ${{ matrix.platform }}
         run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --ruby-versions "3.2,3.3,3.4" --mount-toolchains --build
-      - uses: actions/upload-artifact@v6
-        with:
-          name: gem-${{ matrix.platform }}
-          path: pkg/*-${{ matrix.platform }}.gem
       - name: Configure trusted publishing credentials
         uses: rubygems/configure-rubygems-credentials@v1.0.0
       - name: Push ${{ matrix.platform }} gem to RubyGems
