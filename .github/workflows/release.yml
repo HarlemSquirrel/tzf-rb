@@ -53,6 +53,9 @@ jobs:
         run: |
           version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
           echo "APP_VERSION=$version" >> $GITHUB_ENV
+
+      # Release
+      - uses: rubygems/release-gem@v1
       - uses: actions/download-artifact@v7
         with:
           path: artifacts
@@ -60,9 +63,11 @@ jobs:
         run: |
           mkdir -p pkg
           find artifacts -name "*.gem" -exec mv {} pkg/ \;
-
-      # Release
-      - uses: rubygems/release-gem@v1
+      - name: Push platform gems
+        run: |
+          for gem in pkg/*.gem; do
+            gem push "$gem"
+          done
 
       # GitHub release
       - uses: ncipollo/release-action@v1
