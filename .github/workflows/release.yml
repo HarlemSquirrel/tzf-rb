@@ -53,6 +53,9 @@ jobs:
         run: |
           version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
           echo "APP_VERSION=$version" >> $GITHUB_ENV
+
+      # Release
+      - uses: rubygems/release-gem@v1
       - uses: actions/download-artifact@v7
         with:
           path: artifacts
@@ -60,9 +63,19 @@ jobs:
         run: |
           mkdir -p pkg
           find artifacts -name "*.gem" -exec mv {} pkg/ \;
-
-      # Release
-      - uses: rubygems/release-gem@v1
+      - name: Configure trusted publishing credentials
+        uses: rubygems/configure-rubygems-credentials@v1.0.0
+      - name: Push platform gems
+        run: |
+          set -euo pipefail
+          # Ensure unmatched globs expand to nothing instead of the literal pattern
+          shopt -s nullglob
+          # Include only the platform specific gems
+          for gem in pkg/tzf-*-*.gem; do
+            gem push "$gem"
+          done
+          # Optionally reset nullglob (not strictly necessary in this short script)
+          shopt -u nullglob
 
       # GitHub release
       - uses: ncipollo/release-action@v1
