@@ -26,7 +26,7 @@ jobs:
           cargo-cache: true
           cargo-vendor: true
           # working-directory: ./temporalio
-          cache-version: v1-${{ matrix.rubyPlatform }}
+          cache-version: v1-${{ matrix.platform }}
       - name: Build for ${{ matrix.platform }}
         run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --ruby-versions "3.2,3.3,3.4" --mount-toolchains --build
       # - uses: oxidize-rb/actions/cross-gem@v1
