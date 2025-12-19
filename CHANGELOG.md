@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.6.3]
+
+- Fix loading pre-compiled gems #81
+
 ## [1.6.2]
 
 - Attempt to fix releases again
