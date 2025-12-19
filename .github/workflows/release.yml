@@ -27,12 +27,12 @@ jobs:
           cargo-vendor: true
           # working-directory: ./temporalio
           cache-version: v1-${{ matrix.platform }}
-      - name: Build for ${{ matrix.platform }}
-        run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --ruby-versions "3.2,3.3,3.4" --mount-toolchains --build
-      # - uses: oxidize-rb/actions/cross-gem@v1
-      #   with:
-      #     platform: ${{ matrix.platform }}
-      #     ruby-versions: 3.2,3.3,3.4
+      # - name: Build for ${{ matrix.platform }}
+      #   run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --ruby-versions "3.2,3.3,3.4" --mount-toolchains --build
+      - uses: oxidize-rb/actions/cross-gem@v1
+        with:
+          platform: ${{ matrix.platform }}
+          ruby-versions: 3.2,3.3,3.4
       - uses: actions/upload-artifact@v6
         with:
           name: gem-${{ matrix.platform }}
