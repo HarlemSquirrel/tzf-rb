@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.6.2]
+
+- Attempt to fix releases again
+
 ## [1.6.1]
 
 - Attempt to fix releases
