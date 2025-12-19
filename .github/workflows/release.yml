@@ -74,4 +74,6 @@ jobs:
             echo "Error: No gem files found in pkg/. The build may have failed or produced no .gem artifacts." >&2
             exit 1
           fi
-          gem push "${gems[0]}"
+          for gem_file in "${gems[@]}"; do
+            gem push "${gem_file}"
+          done
