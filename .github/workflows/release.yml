@@ -22,48 +22,52 @@ jobs:
         with:
           ruby-version: "3.4"
           bundler-cache: true
-      - name: Build for ${{ matrix.platform }}
-        run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --build
+      # - name: Build for ${{ matrix.platform }}
+      #   run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --ruby-versions 3.2,3.3,3.4 --build
+      - uses: oxidize-rb/actions/cross-gem@v1
+        with:
+          platform: ${{ matrix.platform }}
+          ruby-versions: 3.2,3.3,3.4
       - uses: actions/upload-artifact@v6
         with:
           name: gem-${{ matrix.platform }}
           path: pkg/*-${{ matrix.platform }}.gem
-  push:
-    name: Push gem to RubyGems.org
-    needs: cross-compile
-    runs-on: ubuntu-latest
+  # push:
+  #   name: Push gem to RubyGems.org
+  #   needs: cross-compile
+  #   runs-on: ubuntu-latest
 
-    permissions:
-      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
-      contents: write # IMPORTANT: this permission is required for `rake release` to push the release tag
+  #   permissions:
+  #     id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+  #     contents: write # IMPORTANT: this permission is required for `rake release` to push the release tag
 
-    steps:
-      # Set up
-      - uses: actions/checkout@v4
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-          ruby-version: ruby
-      - name: Set Environment Variables
-        run: |
-          version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
-          echo "APP_VERSION=$version" >> $GITHUB_ENV
-      - uses: actions/download-artifact@v7
-        with:
-          path: artifacts
-      - name: Move gems to pkg directory
-        run: |
-          mkdir -p pkg
-          find artifacts -name "*.gem" -exec mv {} pkg/ \;
+  #   steps:
+  #     # Set up
+  #     - uses: actions/checkout@v4
+  #     - name: Set up Ruby
+  #       uses: ruby/setup-ruby@v1
+  #       with:
+  #         bundler-cache: true
+  #         ruby-version: ruby
+  #     - name: Set Environment Variables
+  #       run: |
+  #         version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
+  #         echo "APP_VERSION=$version" >> $GITHUB_ENV
+  #     - uses: actions/download-artifact@v7
+  #       with:
+  #         path: artifacts
+  #     - name: Move gems to pkg directory
+  #       run: |
+  #         mkdir -p pkg
+  #         find artifacts -name "*.gem" -exec mv {} pkg/ \;
 
-      # Release
-      - uses: rubygems/release-gem@v1
+  #     # Release
+  #     - uses: rubygems/release-gem@v1
 
-      # GitHub release
-      - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "pkg/*.gem"
-          generateReleaseNotes: true
-          skipIfReleaseExists: true
-          tag: ${{ env.APP_VERSION }}
+  #     # GitHub release
+  #     - uses: ncipollo/release-action@v1
+  #       with:
+  #         artifacts: "pkg/*.gem"
+  #         generateReleaseNotes: true
+  #         skipIfReleaseExists: true
+  #         tag: ${{ env.APP_VERSION }}
