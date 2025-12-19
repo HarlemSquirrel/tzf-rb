@@ -3,9 +3,9 @@
 require_relative "tzf/version"
 
 # Load the appropriate version of the extension
-RUBY_MINOR_VERSION = RUBY_VERSION.split(".")[0..1].join(".")
-if Dir.exist?(File.join(File.dirname(__FILE__), "tzf", RUBY_MINOR_VERSION))
-  require_relative File.join("tzf", RUBY_MINOR_VERSION, "tzf")
+ruby_minor_version = RUBY_VERSION.split(".")[0..1].join(".")
+if Dir.exist?(File.join(File.dirname(__FILE__), "tzf", ruby_minor_version))
+  require_relative File.join("tzf", ruby_minor_version, "tzf")
 else
   require_relative File.join("tzf", "tzf")
 end
