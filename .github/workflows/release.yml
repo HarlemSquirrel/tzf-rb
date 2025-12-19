@@ -67,4 +67,12 @@ jobs:
       - name: Configure trusted publishing credentials
         uses: rubygems/configure-rubygems-credentials@v1.0.0
       - name: Push ${{ matrix.platform }} gem to RubyGems
-        run: gem push $(ls pkg/*.gem | head -n1)
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          gems=(pkg/*.gem)
+          if [ ${#gems[@]} -eq 0 ]; then
+            echo "Error: No gem files found in pkg/. The build may have failed or produced no .gem artifacts." >&2
+            exit 1
+          fi
+          gem push "${gems[0]}"
