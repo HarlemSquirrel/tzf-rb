@@ -6,7 +6,7 @@ on:
 jobs:
   cross-compile:
     name: Cross-compile gem for ${{ matrix.platform }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -18,12 +18,16 @@ jobs:
           - "x64-mingw-ucrt"
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - name: Setup Ruby and Rust
+        uses: oxidize-rb/actions/setup-ruby-and-rust@v1
         with:
           ruby-version: "3.4"
           bundler-cache: true
+          cargo-cache: true
+          cargo-vendor: true
+          cache-version: v1-${{ matrix.platform }}
       - name: Build for ${{ matrix.platform }}
-        run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --build
+        run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --ruby-versions "3.2,3.3,3.4" --mount-toolchains --build
       - uses: actions/upload-artifact@v6
         with:
           name: gem-${{ matrix.platform }}
