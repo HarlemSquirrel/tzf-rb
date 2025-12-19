@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.6.1]
+
+- Attempt to fix releases
+
 ## [1.6.0]
 
 - Add pre-compiled gems for linux, mac, and windows #72
