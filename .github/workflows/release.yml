@@ -38,6 +38,7 @@ jobs:
 
   release-platforms:
     name: Cross-compile gem for ${{ matrix.platform }}
+    needs: create-release
     runs-on: ubuntu-22.04
     permissions:
       id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
