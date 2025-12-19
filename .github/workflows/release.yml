@@ -63,9 +63,13 @@ jobs:
         run: |
           mkdir -p pkg
           find artifacts -name "*.gem" -exec mv {} pkg/ \;
+      - name: Configure trusted publishing credentials
+        uses: rubygems/configure-rubygems-credentials@v1.0.0
       - name: Push platform gems
         run: |
-          for gem in pkg/*.gem; do
+          set -euo pipefail
+          # Include only the platform specific gems
+          for gem in pkg/tzf-*-*.gem; do
             gem push "$gem"
           done
 
