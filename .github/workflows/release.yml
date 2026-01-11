@@ -9,7 +9,7 @@ on:
 jobs:
   cross-compile:
     name: Cross-compile gem for ${{ matrix.platform }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -25,7 +25,7 @@ jobs:
         uses: oxidize-rb/actions/setup-ruby-and-rust@v1
         with:
           ruby-version: "4.0"
-          bundler-cache: false # https://github.com/rake-compiler/rake-compiler-dock/pull/186#issuecomment-3715369156
+          bundler-cache: true
           cargo-cache: true
           cargo-vendor: true
           cache-version: v1-${{ matrix.platform }}
