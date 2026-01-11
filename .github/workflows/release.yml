@@ -1,10 +1,8 @@
-name: Release
+name: Build & Release
 
 on:
   workflow_dispatch:
-  push: # TEMPORARY: to test the release workflow
-    branches:
-      - prepare-1.7.0
+  pull_request:
 
 jobs:
   cross-compile:
@@ -35,23 +33,24 @@ jobs:
         with:
           name: gem-${{ matrix.platform }}
           path: pkg/*-${{ matrix.platform }}.gem
-  # push:
-  #   name: Push gem to RubyGems.org
-  #   needs: cross-compile
-  #   runs-on: ubuntu-latest
+  push:
+    environment: release
+    name: Push gem to RubyGems.org
+    needs: cross-compile
+    runs-on: ubuntu-latest
 
-  #   permissions:
-  #     id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
-  #     contents: write # IMPORTANT: this permission is required for `rake release` to push the release tag
+    permissions:
+      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+      contents: write # IMPORTANT: this permission is required for `rake release` to push the release tag
 
-  #   steps:
-  #     # Set up
-  #     - uses: actions/checkout@v4
-  #     - name: Set up Ruby
-  #       uses: ruby/setup-ruby@v1
-  #       with:
-  #         bundler-cache: true
-  #         ruby-version: 4.0
+    steps:
+      # Set up
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: 4.0
   #     - name: Set Environment Variables
   #       run: |
   #         version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
