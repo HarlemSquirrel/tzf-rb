@@ -25,7 +25,7 @@ jobs:
         uses: oxidize-rb/actions/setup-ruby-and-rust@v1
         with:
           ruby-version: "4.0"
-          bundler-cache: true
+          bundler-cache: false # https://github.com/rake-compiler/rake-compiler-dock/pull/186#issuecomment-3715369156
           cargo-cache: true
           cargo-vendor: true
           cache-version: v1-${{ matrix.platform }}
