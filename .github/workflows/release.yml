@@ -2,11 +2,14 @@ name: Release
 
 on:
   workflow_dispatch:
+  push: # TEMPORARY: to test the release workflow
+    branches:
+      - prepare-1.7.0
 
 jobs:
   cross-compile:
     name: Cross-compile gem for ${{ matrix.platform }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
@@ -32,53 +35,53 @@ jobs:
         with:
           name: gem-${{ matrix.platform }}
           path: pkg/*-${{ matrix.platform }}.gem
-  push:
-    name: Push gem to RubyGems.org
-    needs: cross-compile
-    runs-on: ubuntu-latest
+  # push:
+  #   name: Push gem to RubyGems.org
+  #   needs: cross-compile
+  #   runs-on: ubuntu-latest
 
-    permissions:
-      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
-      contents: write # IMPORTANT: this permission is required for `rake release` to push the release tag
+  #   permissions:
+  #     id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+  #     contents: write # IMPORTANT: this permission is required for `rake release` to push the release tag
 
-    steps:
-      # Set up
-      - uses: actions/checkout@v4
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-          ruby-version: 4.0
-      - name: Set Environment Variables
-        run: |
-          version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
-          echo "APP_VERSION=$version" >> $GITHUB_ENV
+  #   steps:
+  #     # Set up
+  #     - uses: actions/checkout@v4
+  #     - name: Set up Ruby
+  #       uses: ruby/setup-ruby@v1
+  #       with:
+  #         bundler-cache: true
+  #         ruby-version: 4.0
+  #     - name: Set Environment Variables
+  #       run: |
+  #         version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')
+  #         echo "APP_VERSION=$version" >> $GITHUB_ENV
 
-      # Release
-      - uses: rubygems/release-gem@v1
-      - uses: actions/download-artifact@v7
-        with:
-          path: artifacts
-      - name: Move gems to pkg directory
-        run: |
-          mkdir -p pkg
-          find artifacts -name "*.gem" -exec mv {} pkg/ \;
-      - name: Push platform gems
-        run: |
-          set -euo pipefail
-          # Ensure unmatched globs expand to nothing instead of the literal pattern
-          shopt -s nullglob
-          # Include only the platform specific gems
-          for gem in pkg/tzf-*-*.gem; do
-            gem push "$gem"
-          done
-          # Optionally reset nullglob (not strictly necessary in this short script)
-          shopt -u nullglob
+  #     # Release
+  #     - uses: rubygems/release-gem@v1
+  #     - uses: actions/download-artifact@v7
+  #       with:
+  #         path: artifacts
+  #     - name: Move gems to pkg directory
+  #       run: |
+  #         mkdir -p pkg
+  #         find artifacts -name "*.gem" -exec mv {} pkg/ \;
+  #     - name: Push platform gems
+  #       run: |
+  #         set -euo pipefail
+  #         # Ensure unmatched globs expand to nothing instead of the literal pattern
+  #         shopt -s nullglob
+  #         # Include only the platform specific gems
+  #         for gem in pkg/tzf-*-*.gem; do
+  #           gem push "$gem"
+  #         done
+  #         # Optionally reset nullglob (not strictly necessary in this short script)
+  #         shopt -u nullglob
 
-      # GitHub release
-      - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "pkg/*.gem"
-          generateReleaseNotes: true
-          skipIfReleaseExists: true
-          tag: ${{ env.APP_VERSION }}
+  #     # GitHub release
+  #     - uses: ncipollo/release-action@v1
+  #       with:
+  #         artifacts: "pkg/*.gem"
+  #         generateReleaseNotes: true
+  #         skipIfReleaseExists: true
+  #         tag: ${{ env.APP_VERSION }}
