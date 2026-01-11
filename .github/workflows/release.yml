@@ -1,7 +1,10 @@
-name: Release
+name: Build & Release
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   cross-compile:
@@ -21,18 +24,19 @@ jobs:
       - name: Setup Ruby and Rust
         uses: oxidize-rb/actions/setup-ruby-and-rust@v1
         with:
-          ruby-version: "3.4"
+          ruby-version: "4.0"
           bundler-cache: true
           cargo-cache: true
           cargo-vendor: true
           cache-version: v1-${{ matrix.platform }}
       - name: Build for ${{ matrix.platform }}
-        run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --ruby-versions "3.2,3.3,3.4" --mount-toolchains --build
+        run:  bundle exec rb-sys-dock --platform ${{ matrix.platform }} --ruby-versions "3.2,3.3,3.4,4.0" --mount-toolchains --build
       - uses: actions/upload-artifact@v6
         with:
           name: gem-${{ matrix.platform }}
           path: pkg/*-${{ matrix.platform }}.gem
   push:
+    environment: release
     name: Push gem to RubyGems.org
     needs: cross-compile
     runs-on: ubuntu-latest
@@ -48,7 +52,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          ruby-version: ruby
+          ruby-version: 4.0
       - name: Set Environment Variables
         run: |
           version=$(ruby -e 'require_relative "lib/tzf/version"; puts TZF::VERSION')

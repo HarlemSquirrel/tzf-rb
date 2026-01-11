@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [1.7.0]
+
+- Add Ruby 4.0 support #83
+- Bump rb-sys from 0.9.119 to 0.9.123 #82
+
 ## [1.6.3]
 
 - Fix loading pre-compiled gems #81
