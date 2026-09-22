@@ -2,6 +2,25 @@
 
 ## [Unreleased]
 
+## [2.0.0]
+
+- Bump tzf-rs from 2.0.0 to 2.1.2
+- Bump tzf-rs from 1.3.7 to 2.0.0
+- Bump rb-sys from 0.9.128 to 0.9.130
+- Bump tzf-rs from 1.3.6 to 1.3.7
+- Bump json from 2.19.2 to 2.19.9
+- Bump tzf-rs from 1.3.3 to 1.3.6
+- Bump tzf-rs to 1.3.3
+- Bump rb-sys from 0.9.126 to 0.9.127
+- Bump erb from 6.0.1 to 6.0.1.1
+- Bump tzf-rs from 1.1.5 to 1.2.0
+- Bump rb-sys from 0.9.124 to 0.9.126
+- Bump json from 2.18.0 to 2.19.2
+- Bump tzf-rs from 1.1.4 to 1.1.5
+- Bump bytes from 1.11.0 to 1.11.1
+- Bump tzf-rs from 1.1.3 to 1.1.4
+- Bump rb-sys from 0.9.123 to 0.9.124
+
 ## [1.7.0]
 
 - Add Ruby 4.0 support #83
