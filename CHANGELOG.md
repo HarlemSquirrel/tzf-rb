@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## 2.1.0
+
+- Bump tzf-rs from 2.1.3 to 2.3.0
+- Bump tzf-rs from 2.1.2 to 2.1.3
+- Bump magnus from 0.9.2 to 0.9.3
+- Bump magnus from 0.9.1 to 0.9.2
+- Bump magnus from 0.9.0 to 0.9.1
+- Bump lazy_static from 1.5.0 to 1.5.1
+- Bump magnus from 0.8.2 to 0.9.0
+
 ## [2.0.0]
 
 - Bump tzf-rs from 2.0.0 to 2.1.2

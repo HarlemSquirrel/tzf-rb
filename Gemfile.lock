@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tzf (2.0.0)
+    tzf (2.1.0)
       rb_sys (~> 0.9.89)
 
 GEM
@@ -108,4 +108,4 @@ DEPENDENCIES
   tzf!
 
 BUNDLED WITH
-  4.1.0.beta1
+  4.1.0.beta3
