@@ -60,6 +60,11 @@ jobs:
 
       # Release
       - uses: rubygems/release-gem@v1
+        with:
+          # rubygems-await 0.5.4 crashes against Bundler 4.1's compact-index cache API.
+          # The source gem is already pushed at this point, but the crash skips platform
+          # gem uploads and GitHub release creation. Keep publishing without this wait.
+          await-release: "false"
       - uses: actions/download-artifact@v7
         with:
           path: artifacts
